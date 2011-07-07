@@ -3,3 +3,4 @@
 /ozmness/logs
 /ozmness/web-app/WEB-INF/classes
 .metadata
+/ozmness/application.properties
