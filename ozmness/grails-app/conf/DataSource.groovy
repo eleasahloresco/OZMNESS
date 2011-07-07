@@ -17,7 +17,7 @@ environments {
 	    driverClassName = 'com.mysql.jdbc.Driver'
             url = 'jdbc:mysql://localhost/ozmness'
 	    username='root'
-	    password='admin'
+	    password=''
         }
     }
     test {
