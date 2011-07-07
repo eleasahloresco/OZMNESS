@@ -1,7 +1,10 @@
 package com.onb.ozmness
 
-class Employee {
-
+class Employee extends User{
+    
+    static hasMany =[projects:Project]
+    Employee mentor
+    EmployeePosition position
     static constraints = {
     }
 }

@@ -2,6 +2,8 @@ package com.onb.ozmness
 
 class EmployeePosition {
 
-    static constraints = {
+   String name
+   static hasMany = [ratings:Rating]
+   static constraints = {
     }
 }
