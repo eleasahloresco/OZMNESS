@@ -3,6 +3,6 @@
 /ozmness/logs
 /ozmness/web-app/WEB-INF/classes
 .metadata
-/ozmness/application.properties
 /ozmness/grails-app/conf/LocalConfig.groovy
-/ozmness/grails-app/conf/DataSource.groovy
+/ozmness/grails
+
