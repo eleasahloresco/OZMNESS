@@ -1,3 +1,5 @@
+import com.onb.ozmness.*
+
 class BootStrap {
 	def springSecurityService
 	def init = { servletContext ->
