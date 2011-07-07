@@ -1,8 +1,7 @@
-/ozmness/target
-/ozmness/*.log
-/ozmness/logs
-/ozmness/web-app/WEB-INF/classes
-.metadata
-/ozmness/grails-app/conf/LocalConfig.groovy
-/ozmness/grails
+target
+*.log
+logs
+web-app/WEB-INF/classes
+grails-app/conf/LocalConfig.groovy
+grails
 
