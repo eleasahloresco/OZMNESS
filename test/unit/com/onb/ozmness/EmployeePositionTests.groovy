@@ -11,7 +11,10 @@ class EmployeePositionTests extends GrailsUnitTestCase {
         super.tearDown()
     }
 
-    void testSomething() {
-
+    void testAddingEmployeePosition() {
+	def employeePosition = new EmployeePosition(name:"Junior") 
+	mockDomain(EmployeePosition,[employeePosition]);
+	assertEquals "Junior", employeePosition.name
+	
     }
 }
