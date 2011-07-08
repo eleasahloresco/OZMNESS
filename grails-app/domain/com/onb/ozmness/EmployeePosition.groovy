@@ -3,7 +3,8 @@ package com.onb.ozmness
 class EmployeePosition {
 
    String name
-   static hasMany = [ratings:Rating]
+
    static constraints = {
+	name(nullable:false, blank:false)
     }
 }
