@@ -2,7 +2,7 @@ package com.onb.ozmness
 
 class Rating {
     
-    int Value = {1,2,3}
+    def value = 1..3
     String comment
     Date dateCreated
     Employee creator
