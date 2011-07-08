@@ -23,6 +23,7 @@ class ProjectTests extends GrailsUnitTestCase {
         html.parent = null
         project.technologies = [css, html]
         super.setUp()
+        mockDomain(Project, [project])
     }
 
     protected void tearDown() {
@@ -30,23 +31,16 @@ class ProjectTests extends GrailsUnitTestCase {
     }
 
     void testCanFetchProjectName() {
-        mockDomain(Project, [project])
         assertEquals "Invalid project name", "Employee Rating System", project.name
     }
 
     void testCanFetchTechLead() {
-        mockDomain(Project, [project])
         assertEquals "invalid tech lead" , project.lead, techLead
     }
 
-    /*
-    void testCanFetchEmployeesInProject() {
-       mockDomain(Project, [project])
-       project.
-    }
-    */
-
     void testCanFetchTechnologiesUsedInProject() {
-
+        assertEquals "invalid no of technologies used", 2, project.technologies.size()
+        assertTrue "html not found in technologies used", project.technologies.contains(css)
+        assertTrue "css not found in technologies used", project.technologies.contains(html)
     }
 }
