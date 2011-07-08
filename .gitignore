@@ -5,3 +5,4 @@ web-app/WEB-INF/classes
 grails-app/conf/LocalConfig.groovy
 grails
 .metadata
+*.swp
