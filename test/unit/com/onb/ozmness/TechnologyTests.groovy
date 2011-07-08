@@ -8,8 +8,8 @@ class TechnologyTests extends GrailsUnitTestCase {
 
     protected void setUp() {
         super.setUp()
-        pTechnology = new Technology(parentTechnology:null)
-        technology = new Technology(parentTechnology:pTechnology)
+        pTechnology = new Technology(parent:null)
+        technology = new Technology(parent:pTechnology)
     }
 
     protected void tearDown() {
@@ -23,7 +23,7 @@ class TechnologyTests extends GrailsUnitTestCase {
    
         mockDomain(Technology , [technology])
        
-       assertFalse  null == technology.parentTechnology
+       assertFalse  null == technology.parent
 
     
     }
