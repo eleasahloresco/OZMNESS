@@ -21,4 +21,8 @@ class Employee extends User {
         // TODO
     }
 
+	String toString(){
+		firstName + " " + lastName	
+	}
+
 }

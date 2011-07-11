@@ -10,11 +10,12 @@ class Rating {
     Technology technology
 
     static constraints = {
-	dateOfCreation	display: false
+	dateOfCreation	display: false, nullable: true
 	value 		nullable: false, range: 1..3
 	comment		nullable: false
 	creator		nullable: false
 	rated		nullable: false
 	technology	nullable: false
     }
+
 }
