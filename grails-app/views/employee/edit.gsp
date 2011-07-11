@@ -4,7 +4,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta name="layout" content="main" />
+        <meta name="layout" content="admin" />
         <g:set var="entityName" value="${message(code: 'employee.label', default: 'Employee')}" />
         <title><g:message code="default.edit.label" args="[entityName]" /></title>
     </head>
@@ -73,6 +73,24 @@
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: employeeInstance, field: 'enabled', 'errors')}">
                                     <g:checkBox name="enabled" value="${employeeInstance?.enabled}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="firstName"><g:message code="employee.firstName.label" default="First Name" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: employeeInstance, field: 'firstName', 'errors')}">
+                                    <g:textField name="firstName" value="${employeeInstance?.firstName}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="lastName"><g:message code="employee.lastName.label" default="Last Name" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: employeeInstance, field: 'lastName', 'errors')}">
+                                    <g:textField name="lastName" value="${employeeInstance?.lastName}" />
                                 </td>
                             </tr>
                         

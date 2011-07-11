@@ -58,7 +58,7 @@ class TechnologyController {
             if (params.version) {
                 def version = params.version.toLong()
                 if (technologyInstance.version > version) {
-                    
+
                     technologyInstance.errors.rejectValue("version", "default.optimistic.locking.failure", [message(code: 'technology.label', default: 'Technology')] as Object[], "Another user has updated this Technology while you were editing")
                     render(view: "edit", model: [technologyInstance: technologyInstance])
                     return
@@ -96,5 +96,9 @@ class TechnologyController {
             flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'technology.label', default: 'Technology'), params.id])}"
             redirect(action: "list")
         }
+    }
+
+    def test = {
+
     }
 }

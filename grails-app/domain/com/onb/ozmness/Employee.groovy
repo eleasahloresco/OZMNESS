@@ -2,8 +2,8 @@ package com.onb.ozmness
 
 class Employee extends User {
 
-    def firstName
-    def lastName
+    String firstName
+    String lastName
     Employee mentor
     EmployeePosition position
 
