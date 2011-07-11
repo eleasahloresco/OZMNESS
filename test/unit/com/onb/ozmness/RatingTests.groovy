@@ -1,5 +1,7 @@
 package com.onb.ozmness
 
+import java.text.SimpleDateFormat;
+
 import grails.test.*
 
 class RatingTests extends GrailsUnitTestCase {

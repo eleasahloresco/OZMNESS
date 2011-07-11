@@ -1,6 +1,7 @@
 package com.onb.ozmness
 
 class RatingController {
+    def springSecurityService
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
@@ -98,11 +99,12 @@ class RatingController {
         }
     }
 
-	def retrieveMentees = {
-		//retrieves the user's mentees
+	
+	def showRatingWizard = {
+		def user = springSecurityService.currentUser	
+		def mentees = Employee.findAllByMentor(user)
+		def projects = Project.findAllByLead(user)
+		return [mentees: mentees, projects: projects]
 	}
 
-	def retrieveProjects = {
-		//retrieve the projects of techlead
-	}
 }

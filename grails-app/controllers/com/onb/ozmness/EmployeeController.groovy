@@ -2,6 +2,8 @@ package com.onb.ozmness
 
 class EmployeeController {
 
+    def springSecurityService
+
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
     def index = {
@@ -20,7 +22,9 @@ class EmployeeController {
     }
 
     def save = {
+	params.password = springSecurityService.encodePassword(params.password)
         def employeeInstance = new Employee(params)
+
         if (employeeInstance.save(flush: true)) {
             flash.message = "${message(code: 'default.created.message', args: [message(code: 'employee.label', default: 'Employee'), employeeInstance.id])}"
             redirect(action: "show", id: employeeInstance.id)
@@ -28,6 +32,11 @@ class EmployeeController {
         else {
             render(view: "create", model: [employeeInstance: employeeInstance])
         }
+
+	//FIXME -it should set a userRole onSave()
+	def role = Role.findByAuthority("ROLE_ADMIN")
+	def userRole = new UserRole()
+	userRole.create(employeeInstance, role, true)
     }
 
     def show = {

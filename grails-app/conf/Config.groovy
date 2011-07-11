@@ -111,3 +111,5 @@ grails.plugins.springsecurity.interceptUrlMap = [
 
     "/**": ['ROLE_ADMIN']
 ]
+
+grails.plugins.springsecurity.password.algorithm="MD5"
