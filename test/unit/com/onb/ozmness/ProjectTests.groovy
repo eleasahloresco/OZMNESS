@@ -31,10 +31,6 @@ class ProjectTests extends GrailsUnitTestCase {
     }
 
 
-    void testBlank() {
-        println "I was here"
-    }
-
     void testCanFetchProjectName() {
         assertEquals "Invalid project name", "Employee Rating System", project.name
     }
