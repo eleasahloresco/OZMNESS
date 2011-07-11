@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta name="layout" content="main" />
+        <meta name="layout" content="admin" />
         <g:set var="entityName" value="${message(code: 'employee.label', default: 'Employee')}" />
         <title><g:message code="default.show.label" args="[entityName]" /></title>
     </head>
@@ -61,6 +61,20 @@
                             <td valign="top" class="name"><g:message code="employee.enabled.label" default="Enabled" /></td>
                             
                             <td valign="top" class="value"><g:formatBoolean boolean="${employeeInstance?.enabled}" /></td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="employee.firstName.label" default="First Name" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: employeeInstance, field: "firstName")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="employee.lastName.label" default="Last Name" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: employeeInstance, field: "lastName")}</td>
                             
                         </tr>
                     
