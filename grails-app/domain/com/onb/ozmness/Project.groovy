@@ -1,7 +1,6 @@
 package com.onb.ozmness
 
 class Project {
-    def name
     String name
     Employee lead
 
