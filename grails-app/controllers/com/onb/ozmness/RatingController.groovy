@@ -97,4 +97,12 @@ class RatingController {
             redirect(action: "list")
         }
     }
+
+	def retrieveMentees = {
+		//retrieves the user's mentees
+	}
+
+	def retrieveProjects = {
+		//retrieve the projects of techlead
+	}
 }

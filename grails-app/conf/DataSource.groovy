@@ -18,6 +18,7 @@ environments {
             url = 'jdbc:mysql://localhost/ozmness'
 	    username='root'
 	    password=''
+	    dialect='org.hibernate.dialect.MySQL5InnoDBDialect'
         }
     }
     test {
