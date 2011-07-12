@@ -11,7 +11,7 @@ class Rating {
 
     static constraints = {
         value 		nullable: false, range: 1..3
-        comment		nullable: false
+        comment		nullable: true
         creator		nullable: false
         rated		nullable: false
         technology	nullable: false
