@@ -11,6 +11,10 @@ class Employee extends User {
     static hasMany = [projects: Project]
 
     static constraints = {
+	mentor		nullable: true, blank: true
+	position	nullable: false, blank: false
+	firstName	nullable: false, blank: false
+	lastName	nullable: false, blank: false
     }
 
     @Override
