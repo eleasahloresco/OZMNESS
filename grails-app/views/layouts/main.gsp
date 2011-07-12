@@ -8,15 +8,34 @@
         <g:layoutHead />
         <g:javascript library="application" />
     </head>
-    <body>
-        <div id="header">
+<body>
+<div id="header-wrapper">
+    <div id="header">
+        <div id="menu">
+            <ul>
+                <li><a href="#" class="first">Dashboard</a></li>
+                <li class="current_page_item"><a href="#">Rate Someone</a></li>
+            </ul>
         </div>
-        <div id="contentContainer">
-            <div id="content">
+        <!-- end #menu -->
+    </div>
+</div>
+<!-- end #header -->
+<!-- end #header-wrapper -->
+<div id="logo">
+    <h1><a href="#">Ozmness</a></h1>
+    <p><em> an Orange and Bronze Project </em></p>
+</div>
+<hr />
+<!-- end #logo -->
+<div id="page">
+    <div id="page-bgtop">
+        <div id="content">
                 <g:layoutBody />
-            </div>
         </div>
-        <div id="footer">
-        </div>
-    </body>
+        <!-- end #content -->
+    </div>
+    <!-- end #page -->
+</div>
+</body>
 </html>

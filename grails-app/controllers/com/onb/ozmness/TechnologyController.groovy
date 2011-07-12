@@ -98,6 +98,10 @@ class TechnologyController {
         }
     }
 
+    def something =  {
+
+    }
+
     def test = {
 
     }
