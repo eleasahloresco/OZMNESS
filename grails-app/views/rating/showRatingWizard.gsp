@@ -37,9 +37,12 @@
 									<ul>								
 										<g:each in="${project.employees}" status="j" var="employee">
 										<li>
+										<g:if test="${employee.id == user.id}"></g:if>
+										<g:else>
 										<g:link controller="employee" action="employeeDashboard" id="${employee.id}">
 											${employee}
-										</g:link>	
+										</g:link>
+										</g:else>	
 										</li>
 										</g:each>
 									</ul>
