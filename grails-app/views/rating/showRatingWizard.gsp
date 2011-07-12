@@ -14,22 +14,33 @@
 				<li>
 						<a href="#" id="mentee">Rate as a Mentor</a>
 						<ul id="menteeList">
-						<g:each in="${mentees}" status="i" var="mentee">
-							<li><a href="#">${mentee}</a></li>
-						</g:each>
+						<g:if test="${mentees.size <= 0}">
+							<li>none</li>
+						</g:if>
+						<g:else>						
+							<g:each in="${mentees}" status="i" var="mentee">
+								<li><a href="#">${mentee}</a></li>
+							</g:each>
+						</g:else>
 						</ul>
 				</li>
 				<li>
 						<a href="#" id="projects">Rate as a Tech Lead</a>
 						<div id="projectList">
-								<g:each in="${projects}" status="i" var="project">
-								<div>${fieldValue(bean: project, field: "name")}</div>
-								<ul>
-								<g:each in="${project.employees}" status="j" var="employee">
+								<g:if test="${projects.size <= 0}">
+									<li>none</li>
+								</g:if>
+								<g:else>
+									<g:each in="${projects}" status="i" var="project">
+									<div>${project}</div>
+								
+									<ul>								
+										<g:each in="${project.employees}" status="j" var="employee">
 										<li><a href="#">${employee}</a></li>
-								</g:each>
-								</ul>
-								</g:each>
+										</g:each>
+									</ul>
+									</g:each>
+								</g:else>
 						</div>
 				</li>
 			</ul>
