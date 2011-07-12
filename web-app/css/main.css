@@ -462,3 +462,15 @@ hr { display: none; }
 
 #footer a {
 }
+
+#logoutContainer {
+    float: left;
+    font-size: 13px;
+    font-weight: bold;
+    padding-left: 370px;
+    padding-top: 38px;
+}
+
+#logoutContainer a {
+	color: #fff;
+}
