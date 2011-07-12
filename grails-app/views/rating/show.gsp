@@ -30,9 +30,9 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="rating.dateOfCreation.label" default="Date Of Creation" /></td>
+                            <td valign="top" class="name"><g:message code="rating.dateCreated.label" default="Date Created" /></td>
                             
-                            <td valign="top" class="value"><g:formatDate date="${ratingInstance?.dateOfCreation}" /></td>
+                            <td valign="top" class="value"><g:formatDate date="${ratingInstance?.dateCreated}" /></td>
                             
                         </tr>
                     

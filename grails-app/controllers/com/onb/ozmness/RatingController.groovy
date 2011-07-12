@@ -59,7 +59,7 @@ class RatingController {
             if (params.version) {
                 def version = params.version.toLong()
                 if (ratingInstance.version > version) {
-                    
+
                     ratingInstance.errors.rejectValue("version", "default.optimistic.locking.failure", [message(code: 'rating.label', default: 'Rating')] as Object[], "Another user has updated this Rating while you were editing")
                     render(view: "edit", model: [ratingInstance: ratingInstance])
                     return
@@ -100,14 +100,14 @@ class RatingController {
     }
 
 	def showRatingWizard = {
-		def user = springSecurityService.currentUser	
+		def user = springSecurityService.currentUser
 		if (user == null) {
 			return;
 		}
 		def mentees = Employee.findAllByMentor(user)
 		def projects = Project.findAllByLead(user) as List
 		return [mentees: mentees, projects: projects]
-	}	
+	}
 
 
 }
