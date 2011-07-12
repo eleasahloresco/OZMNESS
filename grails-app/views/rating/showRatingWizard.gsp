@@ -10,7 +10,7 @@
     <body>
 			<h1>Rating Wizard</h1>
 			<ul id="wizardList">
-				<li><a href="#">Rate Yourself</a></li>
+				<li><g:link controller="employee" action="employeeDashboard" id="${user.id}">Rate Yourself</g:link></li>
 				<li>
 						<a href="#" id="mentee">Rate as a Mentor</a>
 						<ul id="menteeList">
