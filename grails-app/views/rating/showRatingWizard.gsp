@@ -19,7 +19,7 @@
 						</g:if>
 						<g:else>						
 							<g:each in="${mentees}" status="i" var="mentee">
-								<li><g:link action="#" id="${mentee.id}">${mentee}</g:link></li>
+								<li><g:link controller="employee" action="employeeDashboard" id="${mentee.id}">${mentee}</g:link></li>
 							</g:each>
 						</g:else>
 						</ul>
@@ -37,7 +37,7 @@
 									<ul>								
 										<g:each in="${project.employees}" status="j" var="employee">
 										<li>
-										<g:link action="#" id="${employee.id}">
+										<g:link controller="employee" action="employeeDashboard" id="${employee.id}">
 											${employee}
 										</g:link>	
 										</li>
