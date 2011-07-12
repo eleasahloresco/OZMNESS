@@ -105,4 +105,27 @@ class EmployeeController {
             redirect(action: "list")
         }
     }
+
+    def userDashboard = {
+        def employee = springSecurityService.currentUser
+        def projects = employee.projects as List
+        def ratings = Rating.findAllByRated(employee) as List
+        return [employee:employee, projects:projects, ratings:ratings]
+     }
+
+    def employeeDashboard = {
+        //TODO kailangan ausin ung params.id
+        def employee = Employee.findById(params.id)
+        if (employee != null)
+        {
+            def projects = employee.projects as List
+            def ratings = Rating.findAllByRated(employee) as List
+            return [employee:employee, projects:projects, ratings:ratings]
+        }
+        else
+        {
+            flash.message = "employee not found"
+        }
+    }
+
 }
