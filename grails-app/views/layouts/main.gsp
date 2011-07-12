@@ -19,6 +19,9 @@
             </ul>
         </div>
         <!-- end #menu -->
+        <div id="logoutContainer">
+            <a href="../j_spring_security_logout">Logout</a>
+        </div>
     </div>
 </div>
 <!-- end #header -->
