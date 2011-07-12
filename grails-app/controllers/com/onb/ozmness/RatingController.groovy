@@ -103,7 +103,8 @@ class RatingController {
 	def showRatingWizard = {
 		def user = springSecurityService.currentUser	
 		def mentees = Employee.findAllByMentor(user)
-		def projects = Project.findAllByLead(user)
+		def projects = Project.findAllByLead(user) as List
+	
 		return [mentees: mentees, projects: projects]
 	}
 
