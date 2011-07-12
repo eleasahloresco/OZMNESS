@@ -101,23 +101,12 @@ class RatingController {
 
 	def showRatingWizard = {
 		def user = springSecurityService.currentUser	
-		
-		if(user.username == "admin" || user.username == "dev"){
-			redirect(action: "list")
-		}else{
-			def mentees = Employee.findAllByMentor(user)
-			def projects = Project.findAllByLead(user) as List
-				
-			if(mentees != null && projects != null){
-				return [mentees: mentees, projects: projects]
-			}else if(mentees== null){
-				return [projects: projects]	
-			}else if(projects == null){
-				return [mentees: mentees]
-			}else{
-				return null
-			}
+		if (user == null) {
+			return;
 		}
+		def mentees = Employee.findAllByMentor(user)
+		def projects = Project.findAllByLead(user) as List
+		return [mentees: mentees, projects: projects]
 	}	
 
 
