@@ -33,8 +33,7 @@ class EmployeeController {
             render(view: "create", model: [employeeInstance: employeeInstance])
         }
 
-	//FIXME -it should set a userRole onSave()
-	def role = Role.findByAuthority("ROLE_ADMIN")
+	def role = Role.findByAuthority("ROLE_DEV")
 	def userRole = new UserRole()
 	userRole.create(employeeInstance, role, true)
     }
@@ -67,7 +66,7 @@ class EmployeeController {
             if (params.version) {
                 def version = params.version.toLong()
                 if (employeeInstance.version > version) {
-                    
+
                     employeeInstance.errors.rejectValue("version", "default.optimistic.locking.failure", [message(code: 'employee.label', default: 'Employee')] as Object[], "Another user has updated this Employee while you were editing")
                     render(view: "edit", model: [employeeInstance: employeeInstance])
                     return
