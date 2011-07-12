@@ -81,7 +81,7 @@
                                   <label for="technology"><g:message code="rating.technology.label" default="Technology" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: ratingInstance, field: 'technology', 'errors')}">
-                                    <g:select name="technology.id" from="${com.onb.ozmness.Technology.list()}" optionKey="id" value="${ratingInstance?.technology?.id}"  />
+                                    <g:select name="technology.id" from="${com.onb.ozmness.Technology.findAllByParentIsNotNull()}" optionKey="id" value="${ratingInstance?.technology?.id}"  />
                                 </td>
                             </tr>
                         

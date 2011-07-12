@@ -63,7 +63,7 @@
                                   <label for="technologies"><g:message code="project.technologies.label" default="Technologies" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: projectInstance, field: 'technologies', 'errors')}">
-                                    <g:select name="technologies" from="${com.onb.ozmness.Technology.list()}" multiple="yes" optionKey="id" size="5" value="${projectInstance?.technologies*.id}" />
+                                    <g:select name="technologies" from="${com.onb.ozmness.Technology.findAllByParentIsNotNull()}" multiple="yes" optionKey="id" size="5" value="${projectInstance?.technologies*.id}" />
                                 </td>
                             </tr>
                         
