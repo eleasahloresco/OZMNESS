@@ -1,5 +1,3 @@
-
-
 <%@ page import="com.onb.ozmness.Rating" %>
 <html>
     <head>
@@ -30,16 +28,6 @@
                 <div class="dialog">
                     <table>
                         <tbody>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="dateOfCreation"><g:message code="rating.dateOfCreation.label" default="Date Of Creation" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: ratingInstance, field: 'dateOfCreation', 'errors')}">
-                                    <g:datePicker name="dateOfCreation" precision="day" value="${ratingInstance?.dateOfCreation}"  />
-                                </td>
-                            </tr>
-                        
                             <tr class="prop">
                                 <td valign="top" class="name">
                                   <label for="value"><g:message code="rating.value.label" default="Value" /></label>
