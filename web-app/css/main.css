@@ -39,8 +39,6 @@ blockquote { }
 
 a { color: #D99821; }
 
-a:hover { text-decoration: none; }
-
 a img {
 	border: none;
 }
@@ -123,9 +121,6 @@ hr { display: none; }
 	color: #FFFFFF;
 }
 
-#menu a:hover { 
-	text-decoration: none; 
-}
 
 #menu .current_page_item a {
 }
@@ -357,9 +352,6 @@ hr { display: none; }
 	font-weight: normal;
 }
 
-#sidebar li li a:hover {
-	color: #666666;
-}
 
 #sidebar p {
 	margin: 0;
@@ -367,14 +359,15 @@ hr { display: none; }
 	border-right: 10px solid #E0E0E0;
 }
 
-#sidebar h2 {
+#content h1 {
 	height: 30px;
 	margin: 0 0 10px 0px;
 	padding: 6px 0 2px 0px;
 	text-transform: capitalize;
-	font-size: 18px;
-	font-weight: normal;
-	color: #2E2E2E;
+	font-size: 20px;
+	font-weight: bold;
+	color: #333;
+	border-bottom: 1px solid silver;
 }
 
 

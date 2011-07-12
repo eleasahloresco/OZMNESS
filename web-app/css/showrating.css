@@ -1,0 +1,19 @@
+#wizardList a {
+		font-size: 15px;
+}
+
+#menteeList a, #projectList a {
+		font-size: 12px;
+}
+
+#menteeList {
+		margin-left: 20px;
+}
+#projectList {
+		margin-left: 20px;
+}
+#projectList div {
+		font-size: 13px;
+		color: 999;
+		font-weight: bold;
+}

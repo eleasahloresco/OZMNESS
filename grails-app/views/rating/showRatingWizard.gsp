@@ -2,77 +2,48 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta name="layout" content="admin" />
+        <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'rating.label', default: 'Rating')}" />
         <title><g:message code="default.show.label" args="[entityName]" /></title>
+				<link rel="stylesheet" href="${resource(dir:'css',file:'showrating.css')}" />
     </head>
     <body>
-        <div class="nav">
-            <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
-            <span class="menuButton"><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></span>
-            <span class="menuButton"><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></span>
-        </div>
-
-
-	<div class="body">
-	<h1><g:message code="default.show.label" args="[entityName]" /></h1>
-            <g:if test="${flash.message}">
-            <div class="message">${flash.message}</div>
-            </g:if>
-            <div class="dialog">
-		<table>		
-		   <tbody>
-			<tr class="prop">
-				<td valign="top" class="name">Rate Yourself</td>
-                            
-                        </tr>
-			
-
-			<tr class="prop">
-				<td valign="top" class="name">Rate As Mentor</td>
-			</tr>
-	
-			<g:each in="${mentees}" status="i" var="meentees">
-			<tr>
-				<td></td>
-				<td>${meentees}</td>
-			</tr>
-			</g:each>
-		
-			<tr class="prop">
-				<td valign="top" class="name">Rate As Tech Lead</td>
-			</tr>
-
-			<g:each in="${projects}" status="i" var="project">
-			<tr>
-				<td></td>
-				<td>${fieldValue(bean: project, field: "name")}</td>
-			</tr>
-			
-			<g:each in="${project.employees}" status="j" var="employee">
-			<tr>
-				<td></td>
-				<td></td>
-				<td>${employee}</td>
-			</tr>
-			</g:each>
-
-			</tr>
-			</g:each>
-			
-			
-
-
-		    </tbody>
-		</table>
-            </div>
-            <div class="buttons">
-                <g:form>
-                    <g:hiddenField name="id" value="${ratingInstance?.id}" />
-                    <span class="button"><g:actionSubmit class="edit" action="edit" value="${message(code: 'default.button.edit.label', default: 'Edit')}" /></span>
-                    <span class="button"><g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" /></span>
-                </g:form>
-            </div>
-        </div>
-    </body>
+			<h1>Rating Wizard</h1>
+			<ul id="wizardList">
+				<li><a href="#">Rate Yourself</a></li>
+				<li>
+						<a href="#" id="mentee">Rate as a Mentor</a>
+						<ul id="menteeList">
+						<g:each in="${mentees}" status="i" var="mentee">
+							<li><a href="#">${mentee}</a></li>
+						</g:each>
+						</ul>
+				</li>
+				<li>
+						<a href="#" id="projects">Rate as a Tech Lead</a>
+						<div id="projectList">
+								<g:each in="${projects}" status="i" var="project">
+								<div>${fieldValue(bean: project, field: "name")}</div>
+								<ul>
+								<g:each in="${project.employees}" status="j" var="employee">
+										<li><a href="#">${employee}</a></li>
+								</g:each>
+								</ul>
+								</g:each>
+						</div>
+				</li>
+			</ul>
+  <script type="text/javascript">
+		$(document).ready(function(){
+				$("#menteeList").hide();
+				$("#mentee").click(function() {
+						$("#menteeList").slideToggle();
+				});
+				$("#projectList").hide();
+				$("#projects").click(function(){
+						$("#projectList").slideToggle();
+				});
+		});
+	</script>
+  </body>
 </html>
