@@ -98,10 +98,15 @@ grails.plugins.springsecurity.authority.className = 'com.onb.ozmness.Role'
 
 import grails.plugins.springsecurity.SecurityConfigType
 
+grails.plugins.springsecurity.successHandler.defaultTargetUrl = "/front/index"
+grails.plugins.springsecurity.successHandler.alwaysUseDefault = true
+
 grails.plugins.springsecurity.rejectIfNoRule = false
 grails.plugins.springsecurity.securityConfigType = SecurityConfigType.InterceptUrlMap
+
 grails.plugins.springsecurity.interceptUrlMap = [
-    '/': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+    "/front/index/**" : ['IS_AUTHENTICATED_FULLY'],
+    "/front/adminIndex/**": ['ROLE_ADMIN'],
     "/image/**" : ['IS_AUTHENTICATED_ANONYMOUSLY'],
     '/js/**' : ['IS_AUTHENTICATED_ANONYMOUSLY'],
     "/css/**": ['IS_AUTHENTICATED_ANONYMOUSLY'],

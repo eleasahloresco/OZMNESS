@@ -28,12 +28,10 @@ class LoginController {
 	 * Default action; redirects to 'defaultTargetUrl' if logged in, /login/auth otherwise.
 	 */
 	def index = {
+        println "here"
 		if (springSecurityService.isLoggedIn()) {
-			redirect uri: SpringSecurityUtils.securityConfig.successHandler.defaultTargetUrl
-		}
-		else {
-			redirect action: auth, params: params
-		}
+		    redirect uri:"/rating/showRatingWizard"
+        }
 	}
 
 	/**
@@ -55,7 +53,7 @@ class LoginController {
 	}
 
 	/**
-	 * The redirect action for Ajax requests. 
+	 * The redirect action for Ajax requests.
 	 */
 	def authAjax = {
 		response.setHeader 'Location', SpringSecurityUtils.securityConfig.auth.ajaxLoginFormUrl
