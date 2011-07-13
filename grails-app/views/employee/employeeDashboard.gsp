@@ -34,10 +34,10 @@
 					<th class="header">rating</th>
 					<th class="header">comment</th>
 				</tr>
-				<g:each in="${ratings}" var="rating">
+				<g:each in="${technologies}" var="technology">
 						<tr>
-							<td>${rating.technology}</td>
-							<input type="hidden" name="technology" value="${rating.technology.id}"/>	
+							<td>${technology.name}</td>
+							<input type="hidden" name="technology" value="${technology.id}"/>	
 							<td>
 							<select name="value">
 							  <option value="1">1</option>
