@@ -14,8 +14,8 @@
     <div id="header">
         <div id="menu">
             <ul>
-                <li><a href="#" class="first">Dashboard</a></li>
-                <li class="current_page_item"><a href="#">Rate Someone</a></li>
+                <li><a href="../employee/userDashboard" class="first">Dashboard</a></li>
+                <li class="current_page_item"><a href="../rating/showRatingWizard">Rate Someone</a></li>
             </ul>
         </div>
         <!-- end #menu -->

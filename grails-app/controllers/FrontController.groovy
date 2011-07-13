@@ -14,7 +14,7 @@ class FrontController {
             if (SpringSecurityUtils.ifAllGranted("ROLE_ADMIN")) {
                 forward controller:"front", action:"adminIndex"
             } else {
-                forward controller:"rating", action:"showRatingWizard"
+                forward controller:"employee", action:"userDashboard"
             }
         }
 	}
