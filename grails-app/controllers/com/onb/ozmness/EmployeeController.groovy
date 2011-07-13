@@ -119,7 +119,7 @@ class EmployeeController {
         {
             def projects = employee.projects as List
             def ratings = Rating.findAllByRated(employee) as List
-            def technologies = Technology.findAll()
+            def technologies = Technology.findAllByParentIsNotNull()
             return [employee:employee, projects:projects, ratings:ratings, technologies: technologies]
         }
         else
