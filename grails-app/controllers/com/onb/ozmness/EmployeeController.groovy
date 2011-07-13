@@ -114,7 +114,6 @@ class EmployeeController {
      }
 
     def employeeDashboard = {
-        //TODO kailangan ausin ung params.id
         def employee = Employee.findById(params.id)
         if (employee != null)
         {

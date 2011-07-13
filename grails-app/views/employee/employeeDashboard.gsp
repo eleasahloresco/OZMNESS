@@ -19,13 +19,27 @@
 				<tr>				
 					<th>technology</th>
 					<th>rating</th>
+					<th>comment</th>
 				</tr>
+				<g:form name="rating" url="[controller:'rating',action:'saveAll']">
 				<g:each in="${ratings}" var="rating">
-					<tr>
-						<td>${rating.technology}<td>
-						<td>${rating.value}</td>
-					</tr>				
+						<tr>
+							<td>${rating.technology}</td>
+							<input type="hidden" name="technology" value="${rating.technology.id}"/>	
+							<td>
+							<select name="value">
+							  <option value="1">1</option>
+							  <option value="2">2</option>
+							  <option value="3">3</option>
+							</select>
+							</td>
+							<td><textarea name="comment">comment here</textarea>
+							</td>
+						</tr>		
 				</g:each> 
+				<input type="hidden" name="ratedId" value="${employee.id}"/>
+				<input type="submit" value="rate">
+				</g:form>
 			</table>	
 			
   </body>
