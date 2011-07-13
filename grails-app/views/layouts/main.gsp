@@ -4,23 +4,26 @@
         <title><g:layoutTitle default="Ozmness" /></title>
         <link rel="stylesheet" href="${resource(dir:'css',file:'reset.css')}" />
         <link rel="stylesheet" href="${resource(dir:'css',file:'main.css')}" />
+        <link rel="stylesheet" href="${resource(dir:'css',file:'jquery.ui.stars.css')}" />
         <link rel="shortcut icon" href="${resource(dir:'images',file:'favicon.ico')}" type="image/x-icon" />
         <g:layoutHead />
         <g:javascript library="application" />
-   			<script type="text/javascript" src="${resource(dir:'js', file:'jquery-1.6.2.min.js')}"></script>   
+   		<script type="text/javascript" src="${resource(dir:'js', file:'jquery-1.6.2.min.js')}"></script>   
+   		<script type="text/javascript" src="${resource(dir:'js', file:'jquery-ui-1.8.14.custom.min.js')}"></script>   
+   		<script type="text/javascript" src="${resource(dir:'js', file:'jquery.ui.stars.js')}"></script>   
 	</head>
 <body>
 <div id="header-wrapper">
     <div id="header">
         <div id="menu">
             <ul>
-                <li><a href="../employee/userDashboard" class="first">Dashboard</a></li>
-                <li class="current_page_item"><a href="../rating/showRatingWizard">Rate Someone</a></li>
+                <li><a href="${createLink(controller:'employee', action: 'userDashboard')}" class="first">Dashboard</a></li>
+                <li class="current_page_item"><a href="${createLink(controller:'rating', action:'showRatingWizard')}">Rate Someone</a></li>
             </ul>
         </div>
         <!-- end #menu -->
         <div id="logoutContainer">
-            <a href="../j_spring_security_logout">Logout</a>
+            <a href="${createLink(controller:'logout', action:'index')}">Logout</a>
         </div>
     </div>
 </div>

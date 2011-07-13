@@ -30,15 +30,11 @@
                 font-size: 14px;
                 color: #0C3E70;
             }
-            dl { font-size: 14px; }
-            dl dt {
-                float: left;
-                width: 200px;
-                margin-bottom: 5px;
+            #ratingContainer { font-size: 14px; }
+            .header {
+                font-weigh: bold;
             }
-            dl dd {
-                margin-bottom: 5px;
-            }
+            #ratingContainer tbody tr td { padding: 5px; }
         </style>
     </head>
     <body>
@@ -56,14 +52,40 @@
         </div>
         <div id="ratingContainer">
             <h2>Ozmness Scale</h2>
-            <dl>
-                <dt style="font-weight:bold">Technology</dt>
-                <dd style="font-weight:bold">Rating</dd>
-                <g:each in="${ratings}" var="rating">
-                <dt>${rating.technology}</dt>
-                <dd>${rating.value}</dd>
+            <table id="ratingContainer">
+                <thead>
+                    <tr>
+                        <td class="header" width="200px">Technology</td>
+                        <td class="header" >Rating</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <g:set var="ctr" value = 0 />
+                    <g:each in="${ratings}" var="rating">
+                    <g:set var="ctr" value="${ctr + 1}" />
+                    <tr>
+                        <td>${rating.technology}</td>
+                        <td>
+                            <div id="stars-wrapper-${ctr}">
+                                <input type="radio" name="newrate" value="1" title="" <g:if test="${rating.value == 1}">checked="checked"</g:if> />
+                                <input type="radio" name="newrate" value="2" title="" <g:if test="${rating.value == 2}">checked="checked"</g:if> />
+                                <input type="radio" name="newrate" value="3" title="" <g:if test="${rating.value == 3}">checked="checked"</g:if> />
+                            </div>
+                        </td>
+                    </tr>
                 </g:each>
-		    </dl>	
-        </div>    
+                </tbody>
+		    </table>	
+        </div> 
+        <script type="text/javascript">
+            $(document).ready(function(){
+                var max = ${ctr};
+                for (i = 1; i <= max;  i++) {
+                    $("#stars-wrapper-" + i).stars({
+                        disabled: true
+                    });
+                }
+            });
+        </script>  
   </body>
 </html>
