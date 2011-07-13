@@ -12,14 +12,12 @@ class FrontController {
 	def index = {
 		if (springSecurityService.isLoggedIn()) {
             if (SpringSecurityUtils.ifAllGranted("ROLE_ADMIN")) {
-                redirect uri:"/front/adminIndex"
+                forward controller:"front", action:"adminIndex"
             } else {
-                redirect uri:"/rating/showRatingWizard"
+                forward controller:"rating", action:"showRatingWizard"
             }
         }
 	}
 
-    def adminIndex = {
-
-    }
+    def adminIndex = {}
 }
