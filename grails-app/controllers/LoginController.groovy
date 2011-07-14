@@ -28,7 +28,6 @@ class LoginController {
 	 * Default action; redirects to 'defaultTargetUrl' if logged in, /login/auth otherwise.
 	 */
 	def index = {
-        println "here"
 		if (springSecurityService.isLoggedIn()) {
 		    redirect uri:"/rating/showRatingWizard"
         }

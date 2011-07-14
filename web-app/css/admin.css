@@ -1,6 +1,6 @@
 html * {
     margin: 0;
-    /*padding: 0; SELECT NOT DISPLAYED CORRECTLY IN FIREFOX */
+    padding: 0; 
 }
 
 /* GENERAL */
@@ -15,9 +15,6 @@ body {
     background: #fff;
     color: #333;
     font: 11px verdana, arial, helvetica, sans-serif;
-}
-#grailsLogo {
-	padding:20px;
 }
 
 a:link, a:visited, a:hover {
@@ -55,11 +52,6 @@ textarea {
 
 input:focus, select:focus, textarea:focus {
     border: 1px solid #b2d1ff;
-}
-
-.body {
-    float: left;
-    margin: 0 15px 10px 15px;
 }
 
 /* NAVIGATION MENU */
