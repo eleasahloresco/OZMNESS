@@ -9,4 +9,9 @@ class Technology {
         parent nullable:true
         name blank:false, nullable:false, unique:true
     }
+
+    String toString(){
+	name	
+    }
+
 }

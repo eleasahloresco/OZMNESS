@@ -16,4 +16,9 @@ class Employee extends User {
         lastName	nullable: false, blank: false
     }
 
+    String toString(){
+	firstName + " " + lastName	
+    }
+
+
 }
