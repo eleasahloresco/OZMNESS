@@ -11,10 +11,4 @@ class Project {
         lead nullable:false, blank:false
         name nullable:false, blank:false
     }
-
-
-	String toString(){
-		name	
-	}
-
 }
