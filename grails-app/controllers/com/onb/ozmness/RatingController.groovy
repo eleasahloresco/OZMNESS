@@ -2,6 +2,7 @@ package com.onb.ozmness
 
 class RatingController {
 
+
     	def springSecurityService        
 	def saveAllService
   	def scaffold = true
@@ -19,9 +20,7 @@ class RatingController {
 	
 	
 	def saveAll = {
-		def ratings = saveAllService.serviceMethod(params) as List
-		//def ratingInstances = []
-		
+		def ratings = saveAllService.saveAll(params) as List
 		redirect(action:"showRatingWizard")
 
 	}
