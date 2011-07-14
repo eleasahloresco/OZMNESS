@@ -81,12 +81,12 @@
         def ${propertyName} = ${className}.get(params.id)
         if (${propertyName}) {
             try {
-                ${propertyName}.delete(flush: true)
-                flash.message = "\${message(code: 'default.deleted.message', args: [message(code: '${domainClass.propertyName}.label', default: '${className}'), params.id])}"
+		${propertyName}.delete(flush: true)
+                flash.message = "\${message(code: 'default.deleted.message', args: [message(code: '${domainClass.propertyName}.label', default: '${className}'), ${propertyName}.toString()])}"
                 redirect(action: "list")
             }
             catch (org.springframework.dao.DataIntegrityViolationException e) {
-                flash.message = "\${message(code: 'default.not.deleted.message', args: [message(code: '${domainClass.propertyName}.label', default: '${className}'), params.id])}"
+                flash.message = "\${message(code: 'default.not.deleted.message', args: [message(code: '${domainClass.propertyName}.label', default: '${className}'), ${propertyName}.toString()])}"
                 redirect(action: "show", id: params.id)
             }
         }
