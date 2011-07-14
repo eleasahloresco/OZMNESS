@@ -2,10 +2,9 @@ package com.onb.ozmness
 
 class RatingController {
 
-    	def springSecurityService
+    	def springSecurityService        
 	def saveAllService
-
-        def scaffold = true
+  	def scaffold = true
 
 	def showRatingWizard = {
 		def user = springSecurityService.currentUser
