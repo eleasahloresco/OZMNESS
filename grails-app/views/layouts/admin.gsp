@@ -27,7 +27,7 @@
     </head>
     <body>
         <div id="header"><h1><a href="${createLink(uri: '/front/adminIndex')}">OZMNESS <span>admin</span></a></h1>
-            <p><a href="#">[Logout]</a></p>
+            <p><a href="${createLink(uri: '/logout/index')}">[Logout]</a></p>
         </div>
         <div id="spinner" class="spinner" style="display:none;">
             <img src="${resource(dir:'images',file:'spinner.gif')}" alt="${message(code:'spinner.alt',default:'Loading...')}" />
