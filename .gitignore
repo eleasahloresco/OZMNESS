@@ -6,3 +6,4 @@ grails-app/conf/LocalConfig.groovy
 grails
 .metadata
 *.swp
+cobertura.ser
