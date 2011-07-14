@@ -8,7 +8,4 @@ class EmployeePosition {
 	name(nullable:false, blank:false, unique:true)
     }
 	
-	String toString(){
-		name	
-	}
 }
