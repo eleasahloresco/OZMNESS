@@ -11,7 +11,7 @@ class EmployeeController {
         def employeeInstance = new Employee(params)
 
         if (employeeInstance.save(flush: true)) {
-            flash.message = "${message(code: 'default.created.message', args: [message(code: 'employee.label', default: 'Employee'), employeeInstance.id])}"
+            flash.message = "${message(code: 'default.created.message', args: [message(code: 'employee.label', default: 'Employee'), employeeInstance.toString()])}"
             redirect(action: "show", id: employeeInstance.id)
         }
         else {

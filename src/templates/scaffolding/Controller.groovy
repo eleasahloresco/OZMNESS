@@ -20,7 +20,7 @@
     def save = {
         def ${propertyName} = new ${className}(params)
         if (${propertyName}.save(flush: true)) {
-            flash.message = "\${message(code: 'default.created.message', args: [message(code: '${domainClass.propertyName}.label', default: '${className}'), ${propertyName}.id])}"
+            flash.message = "\${message(code: 'default.created.message', args: [message(code: '${domainClass.propertyName}.label', default: '${className}'), ${propertyName}.toString()])}"
             redirect(action: "show", id: ${propertyName}.id)
         }
         else {
@@ -64,7 +64,7 @@
             }
             ${propertyName}.properties = params
             if (!${propertyName}.hasErrors() && ${propertyName}.save(flush: true)) {
-                flash.message = "\${message(code: 'default.updated.message', args: [message(code: '${domainClass.propertyName}.label', default: '${className}'), ${propertyName}.id])}"
+                flash.message = "\${message(code: 'default.updated.message', args: [message(code: '${domainClass.propertyName}.label', default: '${className}'), ${propertyName}.toString()])}"
                 redirect(action: "show", id: ${propertyName}.id)
             }
             else {
